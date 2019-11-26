@@ -1,0 +1,43 @@
+<table class="table table-hover" style="color: white;margin-top: 68px;">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Skills Name</th>
+            <th>TOC</th>
+            <th>Fee</th>
+            <th>Duration</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let item of list">
+        <tr>
+            <td>{{item.skillId}}</td>
+            <td>{{item.skillName}}</td>
+            <td>{{item.toc}}</td>
+            <td>{{item.fee}}</td>
+            <td>{{item.duration}}</td>
+         
+            <td><button mat-stroked-button (click)="DeleteSkills(item.skillId)">Delete</button></td>
+            <!-- <td><button mat-stroked-button (click)="BlockMentor(item.mentorId)">Block</button></td> -->
+        
+        </tr>
+    </tbody>
+</table>
+<button mat-stroked-button style="margin-left: 515px;margin-top: 28px;" (click)="add()">Add</button>
+<form *ngIf="addclick==1" style="margin-left: 515px;margin-top: 28px;">
+    <mat-form-field>
+        <input type="text" matInput placeholder="Enter Skill name" name="skills" [(ngModel)]="item.skillName">
+    </mat-form-field>&nbsp;
+    <mat-form-field>
+        <input type="text" matInput placeholder="Enter TOC" name="TOC" [(ngModel)]="item.tOC">
+    </mat-form-field><br>
+    <mat-form-field>
+        <input type="number" matInput placeholder="Enter Fees" name="fees" [(ngModel)]="item.fee">
+    </mat-form-field>&nbsp;
+    <mat-form-field>
+        <input type="number" matInput placeholder="Enter Duration" name="duration" [(ngModel)]="item.duration">
+    </mat-form-field><br> 
+    <div style="align-content: center;margin-left: -5px">
+        <button mat-stroked-button (click)="AddTechnology()">Submit</button>  
+    </div>
+</form>

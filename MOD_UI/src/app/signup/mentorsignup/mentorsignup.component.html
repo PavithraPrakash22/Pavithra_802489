@@ -1,0 +1,66 @@
+
+<form  (ngSubmit)="Add()" #form1="ngForm" style="margin-left: 515px;margin-top: 28px;">
+    <h3 style="margin-left: 52px;">MENTOR SIGNUP</h3>
+    <mat-form-field>
+        <input type="text" matInput placeholder="Enter First Name" name="firstname" pattern='[a-zA-Z]*' [formControl]="firstname"[(ngModel)]="item.mentorFName">
+        <mat-error *ngIf="firstname.hasError('required')"> First Name is required.</mat-error>
+        <mat-error *ngIf="firstname.hasError('pattern')">Enter valid name </mat-error> 
+    </mat-form-field>&nbsp;
+    <mat-form-field>
+        <input type="text" matInput placeholder="Enter Last Name"name="lastname" pattern='[a-zA-Z]*' [formControl]="lastname" [(ngModel)]="item.mentorLName">
+        <mat-error *ngIf="lastname.hasError('required')"> Last Name is required.</mat-error>
+        <mat-error *ngIf="lastname.hasError('pattern')">Enter valid name </mat-error> 
+    </mat-form-field><br>
+    <mat-form-field>
+            <input type="password" matInput placeholder="Enter password" name="password" pattern='(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{7,}' [formControl]="password" [(ngModel)]="item.mentorPassword">
+            <mat-error *ngIf="password.hasError('required')"> Password is required.</mat-error>
+            <mat-error *ngIf="password.hasError('pattern')">Enter valid name </mat-error> 
+    </mat-form-field><br>
+    
+    <!-- <mat-form-field>
+            <input type="password" matInput placeholder="Enter Confirm password"name="repeatpassword" [formControl]="repeatpassword" >
+            <mat-error *ngIf="repeatpassword.hasError('required')">confirm password is required</mat-error>
+            <mat-error *ngIf="repeatpassword.hasError('')"> Password didn't match</mat-error>
+    </mat-form-field><br> -->
+    <!-- <mat-form-field>
+        <mat-label>Enter Start Date</mat-label>
+        <input type="datetime-local" matInput name="startdate" [formControl]="startdate" [(ngModel)]="startdate1">
+        <mat-error *ngIf="startdate.hasError('required')">Start  Date is required</mat-error>
+    </mat-form-field>&nbsp;
+    <mat-form-field>
+        <mat-label>Enter End Date</mat-label>
+        <input type="datetime-local" matInput name="enddate" [formControl]="enddate" [(ngModel)]="enddate1">
+        <mat-error *ngIf="enddate.hasError('required')">End Date is required</mat-error>
+    </mat-form-field><br> -->
+    <mat-form-field>
+        <input type="email" matInput placeholder="Enter Email" name="email" [formControl]="email" [(ngModel)]="item.mentorEmail">
+        <mat-error *ngIf="email.hasError('required')">Email is required</mat-error>
+        <mat-error *ngIf="email.hasError('email')">Enter valid email</mat-error>
+    </mat-form-field>&nbsp;
+    <mat-form-field>
+        <input type="text" matInput placeholder="Enter Mobile No" name="mobileno" [formControl]="mobileno" pattern='^[0-9]{10}$' [(ngModel)]="item.mentorMobileNo">
+        <mat-error *ngIf="mobileno.hasError('required')">Mobile No is required</mat-error>
+        <mat-error *ngIf="mobileno.hasError('pattern')">Enter valid Mobile no</mat-error>
+    </mat-form-field><br>
+    <mat-form-field>
+        <input type="text" matInput placeholder="Enter TimeSlot" name="timeslot" [formControl]="timeslot" [(ngModel)]="item.mentorTimeSlot">
+        <mat-error *ngIf="timeslot.hasError('required')"> timeslot is required.</mat-error>
+        
+</mat-form-field>&nbsp;
+    <mat-form-field>
+        <input type="text" placeholder="Enter Primary Technology" [formControl]="lot" matInput  [(ngModel)]="item.mentorSkills"   name="lot" [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let item1 of options" [value]="item1.skillName">
+            {{item1.skillName}}
+         </mat-option>
+     </mat-autocomplete>
+        <mat-error *ngIf="lot.hasError('required')">Technology known is required</mat-error>
+    </mat-form-field>&nbsp;
+    <!-- <mat-form-field>
+        <input type="number" matInput placeholder="Enter Experience in Years" [formControl]="experience" [(ngModel)]="experience1">
+        <mat-error *ngIf="experience.hasError('required')">Experience is required</mat-error>
+    </mat-form-field> -->
+    <div style="align-content: center;margin-left: -5px">
+        <button mat-stroked-button routerLink="user">Sign up</button>  
+    </div>
+</form>

@@ -1,0 +1,11 @@
+<!-- <p>user works!</p> -->
+<p style="font-size: 25px;margin-left: 240px;">Welcome {{item.userFName}}  {{item.userLName}}! </p>
+<div style="align-content: center;margin-left: 541px">
+        <!-- <button mat-stroked-button routerLink="unotifications">Notifications</button> -->
+        <!-- <button mat-stroked-button routerLink="ucurrenttrainings">Current Trainings</button>  -->
+        <button mat-stroked-button routerLink="ucurrenttrainings">List Of Trainings</button>
+        <button mat-stroked-button routerLink="ueditprofile">Edit Profile</button>
+        <button mat-stroked-button (click)="logout()">Logout</button>        
+    </div>
+    
+    <router-outlet></router-outlet>

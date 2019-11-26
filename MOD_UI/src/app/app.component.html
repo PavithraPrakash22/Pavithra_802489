@@ -1,0 +1,52 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+    </button>
+    <h1>COURSERA</h1>
+    <span class="menu-spacer"></span>
+    <div> 
+      <a mat-button routerLink=""> Home </a>
+      <button mat-icon-button routerLink="search">
+          Search
+          <mat-icon>search</mat-icon>
+      </button>
+      
+      <!-- <mat-menu #rootMenu="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="subMenu">Power</button>
+        <button mat-menu-item>System settings</button>
+      </mat-menu>
+      
+      <mat-menu #subMenu="matMenu">
+        <button mat-menu-item>Shut down</button>
+        <button mat-menu-item>Restart</button>
+        <button mat-menu-item>Hibernate</button>
+      </mat-menu>
+      
+      <button mat-button [matMenuTriggerFor]="rootMenu">
+        <button mat-menu-item>Explore</button>
+      </button> -->
+    </div>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row>
+      <span style="font-size: 12px;">Coursera helps you to book mentors and to learn required courses</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <mat-nav-list>
+    
+      <a *ngIf="settok()==0" mat-list-item routerLink="login">  Login </a>
+      <a *ngIf="settok()==0"mat-list-item routerLink="signup">  Signup </a>
+        <a *ngIf="settok()!=0" mat-list-item (click)="logout()">  logout </a>
+    
+    </mat-nav-list>
+  </mat-sidenav>
+<mat-sidenav-content>
+      <div style="height: 88vh;">
+
+              <router-outlet></router-outlet>
+            </div>
+          </mat-sidenav-content>
+        </mat-sidenav-container> 

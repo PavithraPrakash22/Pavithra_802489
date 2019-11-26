@@ -1,0 +1,47 @@
+<form>
+<!-- <mat-form-field style="margin-left: 513px;margin-top: 44px;width: 244px;">
+        <input type="text" matInput placeholder="Enter Technology to Search" name ="Search" [(ngModel)]="skill">
+</mat-form-field><br> -->
+<mat-form-field style="margin-left: 513px;margin-top: 44px;width: 244px;">
+<input type="text" matInput placeholder="Enter Technology to Search" [(ngModel)]="skill"  matInput name="search" [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let item1 of options" [value]="item1.skillName">
+          {{item1.skillName}}
+       </mat-option>
+   </mat-autocomplete>
+</mat-form-field>
+<div style="align-content: center;margin-left: 513px;">
+        <button mat-stroked-button (click)="Search()">Search</button>  
+</div>
+<br>
+<br>
+</form>
+<table *ngIf="onclick==1" class="table table-hover" style="color: white">
+                <thead>
+                    <tr>
+                        <th>Mentor Id</th>
+                        <th>Mentor FirstName</th>
+                        <th>Mentor LastName </th>
+                        <th>Mobile No</th>
+                        <th>Email</th>
+                        <th>Time Slot</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let item of list">
+                    <tr>
+                        <td>{{item.mentorId}}</td>
+                        <td>{{item.mentorFName}}</td>
+                        <td>{{item.mentorLName}}</td>
+                        <td>{{item.mentorMobileNo}}</td>
+                        <td>{{item.mentorEmail}}</td>
+                        <td>{{item.mentorTimeSlot}}</td>
+                        <td>
+                                <!-- <div style="align-content: center;margin-left: 513px;">
+                                    <button mat-stroked-button>Book Mentor</button>  
+                                </div> -->
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+           

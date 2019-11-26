@@ -1,0 +1,25 @@
+<table class="table table-hover" style="color: white;margin-top: 68px;">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>User ID</th>
+            <th>Amount</th>
+            <th>Mentor ID</th>
+            <th>Mentor Amount</th>
+            
+        </tr>
+    </thead>
+    <tbody *ngFor="let item of list">
+        <tr>
+            <td>{{item.paymentId}}</td>
+            <td>{{item.userId}}</td>
+            <td>{{item.amount}}</td>
+            <td>{{item.mentorId}}</td>
+            <td>{{item.mentorAmount}}</td>
+<!--         
+            <td><button mat-stroked-button (click)="DeleteMentor(item.mentorId)">Delete</button></td>
+            <td><button mat-stroked-button (click)="BlockMentor(item.mentorId)">Block</button></td>
+           -->
+        </tr>
+    </tbody>
+</table>

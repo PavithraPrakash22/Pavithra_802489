@@ -1,0 +1,12 @@
+<form style="margin-left: 515px;margin-top: 28px;">
+    <h3 style="margin-left: 52px;">LOGIN</h3>
+    <mat-form-field>
+        <input type="email" matInput placeholder="Enter Email" name="email" [(ngModel)]="email">
+    </mat-form-field><br>
+    <mat-form-field>
+        <input type="password" matInput placeholder="Enter password" name="password" [(ngModel)]="password">
+    </mat-form-field>&nbsp; 
+    <div style="align-content: center;margin-left: -5px">
+        <button mat-stroked-button (click)="Login()">Log In</button>  
+    </div>
+</form>

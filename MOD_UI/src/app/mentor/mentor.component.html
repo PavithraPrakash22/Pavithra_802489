@@ -1,0 +1,10 @@
+<p style="font-size: 25px;margin-left: 240px;">Welcome {{item.mentorFName}}  {{item.mentorLName}}! </p>
+<div style="align-content: center;margin-left: 541px">
+    <!-- <button mat-stroked-button routerLink="mnotifications">Notifications</button> -->
+    <button mat-stroked-button routerLink="mcurrenttrainings">Current Trainings</button> 
+    <!-- <button mat-stroked-button routerLink="mcompletedtrainings">Completed Trainings</button> -->
+    <button mat-stroked-button routerLink="meditprofile">Edit Profile</button>
+    <button mat-stroked-button (click)="logout()">Logout</button>        
+</div>
+
+<router-outlet></router-outlet>

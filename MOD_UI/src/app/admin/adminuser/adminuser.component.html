@@ -1,0 +1,27 @@
+ <table class="table table-hover" style="color: white;margin-top: 68px;">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Number</th>
+            <th>Active Status</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let item of list">
+        <tr>
+            <td>{{item.userId}}</td>
+            <td>{{item.userFName}}</td>
+            <td>{{item.userLName}}</td>
+            <td>{{item.userEmail}}</td>
+            <td>{{item.userMobileNo}}</td>
+            <td>{{item.userActive}}</td>
+            <td><button mat-stroked-button (click)="DeleteUser(item.userId)">Delete</button></td>
+            <td><button mat-stroked-button (click)="BlockUser(item.userId)">Block</button></td>
+          
+        </tr>
+    </tbody>
+</table>

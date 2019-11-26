@@ -1,0 +1,11 @@
+<form style="margin-left: 515px;margin-top: 28px;">
+    <mat-form-field>
+        <input type="email" matInput placeholder="Enter Email" name="email" [(ngModel)]="email">
+    </mat-form-field><br>
+    <mat-form-field>
+        <input type="password" matInput placeholder="Enter password" name="password" [(ngModel)]="password">
+    </mat-form-field>&nbsp; 
+    <div style="align-content: center;margin-left: -5px">
+        <button mat-stroked-button (click)="UpdateUser()">Update</button>  
+    </div>
+</form>

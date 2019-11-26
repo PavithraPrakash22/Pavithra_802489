@@ -1,0 +1,16 @@
+a:hover {
+    background-color: white;
+    color: purple;
+    Text-decoration: none;
+     
+  }
+
+  a:active {
+    border-block-end-color: purple;
+  }
+  button:active {
+    outline: none;
+    border: none;
+}
+
+button:focus {outline:0;}

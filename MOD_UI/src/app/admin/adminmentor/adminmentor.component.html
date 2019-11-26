@@ -1,0 +1,33 @@
+<table class="table table-hover" style="color: white;margin-top: 68px;">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Number</th>
+            <th>Skills</th>
+            <th>TimeSlot</th>
+            <th>Availability</th>
+            <th>Active Status</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let item of list">
+        <tr>
+            <td>{{item.mentorId}}</td>
+            <td>{{item.mentorFName}}</td>
+            <td>{{item.mentorLName}}</td>
+            <td>{{item.mentorEmail}}</td>
+            <td>{{item.mentorMobileNo}}</td>
+            <td>{{item.mentorSkills}}</td>
+            <td>{{item.mentorTimeSlot}}</td>
+            <td>{{item.mentorAvailability}}</td>
+            <td>{{item.mentorActive}}</td>
+            <td><button mat-stroked-button (click)="DeleteMentor(item.mentorId)">Delete</button></td>
+            <td><button mat-stroked-button (click)="BlockMentor(item.mentorId)">Block</button></td>
+          
+        </tr>
+    </tbody>
+</table>

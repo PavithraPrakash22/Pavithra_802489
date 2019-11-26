@@ -1,0 +1,37 @@
+<form  (ngSubmit)="Add()" #form1="ngForm" style="margin-left: 515px;margin-top: 28px;">
+    <h3 style="margin-left: 52px;">USER SIGNUP</h3>
+    <mat-form-field>
+        <input type="text" matInput placeholder="Enter First Name" name="firstname" pattern='[a-zA-Z]*' [formControl]="firstname"[(ngModel)]="item.userFName">
+        <mat-error *ngIf="firstname.hasError('required')"> First Name is required.</mat-error>
+        <mat-error *ngIf="firstname.hasError('pattern')">Enter valid name </mat-error> 
+    </mat-form-field>&nbsp;
+    <mat-form-field>
+        <input type="text" matInput placeholder="Enter Last Name"name="lastname" pattern='[a-zA-Z]*' [formControl]="lastname" [(ngModel)]="item.userLName">
+        <mat-error *ngIf="lastname.hasError('required')"> Last Name is required.</mat-error>
+        <mat-error *ngIf="lastname.hasError('pattern')">Enter valid name </mat-error> 
+    </mat-form-field><br>
+    <mat-form-field>
+            <input type="password" matInput placeholder="Enter password" name="password" pattern='(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{7,}' [formControl]="password" [(ngModel)]="item.userPassword">
+            <mat-error *ngIf="password.hasError('required')"> Password is required.</mat-error>
+            <mat-error *ngIf="password.hasError('pattern')">Enter valid name </mat-error> 
+    </mat-form-field>&nbsp;
+    <!-- <mat-form-field>
+            <input type="password" matInput placeholder="Enter Confirm password"name="repeatpassword" [formControl]="repeatpassword"  [(ngModel)]="repeatpassword1">
+            <mat-error *ngIf="repeatpassword.hasError('required')">confirm password is required</mat-error>
+            <mat-error *ngIf="repeatpassword.hasError('')"> Password didn't match</mat-error>
+    </mat-form-field><br> -->
+    <mat-form-field>
+        <input type="email" matInput placeholder="Enter Email" name="email" [formControl]="email" [(ngModel)]="item.userEmail">
+        <mat-error *ngIf="email.hasError('required')">Email is required</mat-error>
+        <mat-error *ngIf="email.hasError('email')">Enter valid email</mat-error>
+    </mat-form-field><br>
+    <mat-form-field>
+        <input type="text" matInput placeholder="Enter Mobile No" name="mobileno" [formControl]="mobileno" pattern='^[0-9]{10}$'  [(ngModel)]="item.userMobileNo">
+        <mat-error *ngIf="mobileno.hasError('required')">Mobile No is required</mat-error>
+        <mat-error *ngIf="mobileno.hasError('pattern')">Enter valid Mobile no</mat-error>
+    </mat-form-field><br>
+    <div style="align-content: center;margin-left: -5px">
+        <!-- <a routerLink="userLogin"mat-stroked-button>Item 1</a> -->
+        <button mat-stroked-button>Sign up</button>  
+    </div>
+</form>
